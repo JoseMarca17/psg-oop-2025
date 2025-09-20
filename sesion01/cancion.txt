@@ -1,0 +1,25 @@
+Requisitos:
+
+- escuchar fragmentos aleatoriamente
+- dar "like" para ver el nombre de la canción, artista y carátula
+- dar "dislike" para pasar a la siguiente
+- comparar canciones según género, duración y artista
+
+Objetos:
+- Canción 
+
+Características:
+- Canción:
+- nombre
+- artista
+- género
+- duración
+- fragmentos
+- año
+
+Acciones:
+- escuchar fragmentos
+- dar "like"
+- dar "dislike"
+- ver información
+- comparar canciones

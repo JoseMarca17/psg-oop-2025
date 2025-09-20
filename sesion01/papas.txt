@@ -1,0 +1,13 @@
+Para un ingeniero mecánico que diseña máquinas peladoras de papas:
+- Tamaño promedio (tamaño)
+- Dureza de la cáscara (dureza)
+- Resistencia a la presión (resistencia)
+- Forma e irregularidades (uniformidad)
+- Textura de la piel (textura)
+
+Para un distribuidor de papas fritas
+- Tamaño promedio 
+- Tipo de la papa 
+- Estado de la papa 
+- Precio
+- Estado de las papas
