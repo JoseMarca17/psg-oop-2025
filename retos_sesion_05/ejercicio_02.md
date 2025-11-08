@@ -74,3 +74,4 @@ classDiagram
     Volador <|-- Pajaro 
     Nadador <|-- Pato 
     Volador <|-- Pato 
+```
