@@ -1,14 +1,13 @@
 # EJERCICIO 1
 ## Analisis
-
 ### Requisitos
-- Debe tener dos atributos: `numerador ` y `denominador`.
-- Debe poder representarse como "numerador/denominador".
-- Debe poder sumar fracciones utilizando el operador +.
-- Debe poder restar fracciones utilizando el operador -.
-- Debe poder multiplicar fracciones utilizando el operador *.
-- Debe poder dividir fracciones utilizando el operador /.
-- Debe poder compararse por igualdad, menor que, mayor que y desigualdad.
+- Cada fraccion debe tener dos atributos: `numerador ` y `denominador`.
+- La fraccion debe poder representarse como "numerador/denominador".
+- Se debe sumar fracciones utilizando el operador +.
+- Se debe restar fracciones utilizando el operador -.
+- Se debe multiplicar fracciones utilizando el operador *.
+- Se debe dividir fracciones utilizando el operador /.
+- Se debe porder comparar las fracciones por igualdad, menor que, mayor que y desigualdad.
 
 ### Objetos
 - Fraccion

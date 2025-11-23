@@ -49,5 +49,4 @@ catalogo[2] = Destino("Monterrey", 1000)
 del catalogo[1]
 
 print("\nCatalogo actualizado:")
-for destino in catalogo:
-    print(destino)
+print(catalogo)

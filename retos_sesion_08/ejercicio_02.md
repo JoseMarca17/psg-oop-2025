@@ -5,16 +5,12 @@
 - El catalogo debe almacenar varios destinos.
 - Cada destino debe tener nombre y costo.
 - El destino se representa como "[nombre] ➡ [costo] USD".
-- El catalogo se representa como:
-  "🗺 Destinos 🗺
-   1. destino1
-   2. destino2
-   ..."
-- Se debe poder obtener la longitud con len().
+- Poder visualizar, modificar y recorrer los destinos 
+- Se debe poder obtener la longitud del catalogo.
 - Se debe poder acceder a los destinos por indice.
 - Se debe poder asignar un destino por indice.
 - Se debe poder eliminar un destino por indice.
-- Se debe poder iterar sobre los destinos.
+- Se debe poder recorrer por los destinos.
 
 ### Objetos
 - Destino
