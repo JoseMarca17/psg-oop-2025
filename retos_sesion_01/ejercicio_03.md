@@ -11,7 +11,7 @@ El dibujo final puede descargarse en formato PNG o JPG.
 ### Requisitos: 
 - Elegir raza de perro
 - Elegir color de pelaje
-- Elegir tamaño
+- Elegir tamaño de orejas
 - Elegir tipo de orejas
 - Agregar accesorios: sombrero, gafas
 - Elegir formato de imagenes: PNG O JPG
@@ -29,11 +29,11 @@ Clases:
     - Nombre: Dibujo
     - Atributos:
         - raza
-        - colorPelaje
-        - tamaño
-        - tipoOrejas
+        - color_pelaje
+        - tamaño_orejas
+        - tipo_orejas
         - accesorio
-        - formatoImagen
+        - formato_imagen
     - Métodos:
         - (No hay métodos)
 
@@ -41,10 +41,10 @@ Clases:
 classDiagram
     class Dibujo {
         raza
-        colorPelaje
-        tamaño
-        tipoOrejas
+        color_pelaje
+        tamaño_orejas
+        tipo_orejas
         accesorio
-        formatoImagen
+        formato_imagen
     }
 ```
