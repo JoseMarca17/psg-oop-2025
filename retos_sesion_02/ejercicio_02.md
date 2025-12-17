@@ -9,39 +9,64 @@ La vinoteca tiene en su inventario 4 vinos y 3 quesos
 ## Requisitos:
 - Registrar los vinos
 - Registrar los quesos
-- Registrar los atributos de cada vinmo
-- Registrar los atributos de cada queso
+- Registrar los atributos de cada vino (nombre, tipo, cepa y año)
+- Registrar los atributos de cada queso (nombre, variedad, edad y si lleva sal)
 
-## Caracteristicas
+## Objetos:
 - Vino
-  - Nombre
-  - Tipo
-  - Cepa
-  - Anio
+- Queso
+
+## Características:
+- Vino
+    - nombre
+    - tipo
+    - cepa
+    - anio
 
 - Queso
-  - Nombre
-  - Variedad
-  - Edad
-  - Sal
+    - nombre
+    - variedad
+    - edad
+    - sal
 
-## Acciones
+## Acciones:
 - (No hay acciones)
 
-## Diagrama de clases
+## Diseño:
 
-```mermaid	
+Clases:
+- Vino:
+  - Atributos:
+      - nombre 
+      - tipo 
+      - cepa 
+      - anio 
+  - Métodos:
+      - (No hay acciones)
+
+- Queso:
+  - Atributos:
+      - nombre 
+      - variedad 
+      - edad 
+      - sal 
+  - Métodos:
+      - (No hay acciones)
+
+## Diagrama de clases:
+
+```mermaid
 classDiagram
-    class Vino{
-        String Nombre
-        String Tipo
-        String Cepa
-        Int Anio
+    class Vino {
+        String nombre
+        String tipo
+        String cepa
+        Int anio
     }
-    class Queso{
-        String Nombre 
-        String Variedad
+    
+    class Queso {
+        String nombre
+        String variedad
         Int edad
-        Boolean Sal
+        Boolean sal
     }
-```
