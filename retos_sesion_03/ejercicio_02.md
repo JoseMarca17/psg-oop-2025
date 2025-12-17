@@ -1,46 +1,47 @@
-Imagina un sistema que modela el trabajo de cocineros en una cocina profesional.
-Cada cocinero tiene tres elementos clave:
+# Analisis
 
-- Una lista de ingredientes disponibles.
-- Un conjunto de recetas definidas que puede preparar
-- Un contador de productividad, que aumenta cada vez que prepara una receta con éxito. Si hay más de un cocinero, sus puntos individuales
-  pueden sumarse para obtener una métrica agregada de productividad.
-
-# Análisis
 ## Requisitos:
+- Crear un cocinero con inventario y recetas.
+- Cada cocinero posee ingredientes y un contador de productividad.
+- La productividad individual sube al preparar recetas con exito.
+- La productividad de varios cocineros se suma en una metrica global.
+- Solo se preparan recetas si se tienen los ingredientes necesarios.
 
-- Crear un cocinero.
-- Cada cocinero tiene:
-  - Una lista de ingredientes disponibles.
-  - Un conjunto de recetas definidas que puede preparar.
-  - Un contador de productividad (número de recetas preparadas con éxito).
-- Las recetas disponibles en el sistema son: Pan, pizza, galleta
-- Si el cocinero tiene todos los ingredientes, puede preparar la receta con éxito 
-- Si no tiene los ingredientes necesarios, falla.
-- Si hay varios cocineros, se puede obtener una productividad conjunta 
-
-# Objetos:
+## Objetos:
 - Cocinero
 
-# Características:
-
-- Cocinero: `ingredientes`, `recetas`, `productividad` 
+## Caracteristicas:
+- ingredientes
+- recetas
+- productividad
 
 ## Acciones:
-- Cocinero: `preparar_receta(nombre_receta)`, `mostrar_ingredientes()`, `agregar_ingrediente()`
-            `mostrar_productividad()`, `calcular_productividad_total(cocineros)`
+- preparar_receta
+- agregar_ingredientes
+- obtener_reporte_global
+
+## Diseño
+
+Clases:
+- Cocinero:
+    - Atributos:
+        - nombre
+        - ingredientes
+        - productividad
+        - total_productividad
+    - Metodos:
+        - preparar_receta(nombre_receta)
+        - agregar_ingredientes(ingredientes)
+        - obtener_reporte_global()
 
 ```mermaid
 classDiagram
     class Cocinero {
-        list ingredientes
-        dict recetas
+        String nombre
+        set ingredientes
         int productividad
+        int total_productividad
         preparar_receta(nombre_receta)
-        mostrar_ingredientes()
-        agregar_ingrediente(ingrediente)
-        mostrar_productividad()
-        calcular_productividad_total(lista_cocineros)
+        agregar_ingredientes(ingredientes)
+        obtener_reporte_global()
     }
-
-```

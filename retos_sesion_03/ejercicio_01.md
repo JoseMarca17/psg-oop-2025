@@ -1,47 +1,46 @@
-Imagina un juego de rol en el que el personaje principal es un atleta.
-Este personaje tiene tres atributos principales:
-
-- nombre: identifica al atleta
-- energía: representa su nivel de energía actual.
-- fuerza: indica su capacidad física.
-
-Cada atleta puede realizar las siguientes acciones:
-
-- Entrenar: aumenta su fuerza, pero consume energía.
-- Descansar: recupera energía.
-- Comer: solo puede consumir hamburguesas, lo que también le ayuda a recuperar energí
-
 # Análisis
-## Requisitos:
-- Crear un atleta.
-- El atleta tiene: nombre, energía y fuerza.
-- El atleta puede entrenar, descansar y comer hamburguesas.
-- Entrenar aumenta fuerza, pero reduce energía.
-- Descansar recupera energía.
-- Comer hamburguesas también recupera energía.
-- Si el atleta se queda sin energía, no puede entrenar
 
-## Objetos
+## Requisitos:
+- Representar la identidad del atleta y su estado físico (fuerza y energia).
+- El entrenamiento es un intercambio: se gana capacidad fisica (fuerza) a costa de vitalidad (energía).
+- La recuperación de energia es vital y se logra mediante el descanso o la ingesta de un único tipo de alimento permitido (hamburguesas).
+- Se debe controlar que la energia no exceda un limite maximo ni baje de un mínimo funcional.
+
+## Objetos:
 - Atleta
 
-## Caracteristicas
-- Atleta `nombre`, `energia`, `fuerza`
-  
-## Acciones
-- Atleta: `entrenar()`, `descansar()`, `comer()`
+## Características:
+- Atleta: 
+  - nombre
+  - energia: Valor numérico que fluctúa entre 0 y 100.
+  - fuerza: Nivel de capacidad acumulado.
 
+## Acciones:
+- Atleta:
+  - entrenar():
+  - descansar():
+  - comer(): 
+
+## Diseño
+
+- Clases:
+- Atleta:
+    - Atributos:
+        - nombre 
+        - energia 
+        - fuerza 
+    - Metodos:
+        - entrenar(horas)
+        - descansar(horas)
+        - comer(cantidad)
 
 ```mermaid
 classDiagram
- classDiagram
     class Atleta {
         String nombre
-        float energia
-        float fuerza
-
-        entrenar()
-        descansar()
-        comer()
+        int energia
+        int fuerza
+        entrenar(horas)
+        descansar(horas)
+        comer(hamburguesas)
     }
-
-```
