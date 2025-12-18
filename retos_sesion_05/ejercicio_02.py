@@ -31,7 +31,6 @@ class Pato(Nadador, Volador):
         self.nadar()
         self.volar()
 
-# Implementacion
 nemo = Pez("Pez Payaso")
 nemo.mostrar()
 

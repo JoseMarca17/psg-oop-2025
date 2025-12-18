@@ -22,7 +22,6 @@ class Avion(Vehiculo):
         self._velocidad += 100
         print(f"Volando... Velocidad actual: {self._velocidad} km/h")
 
-# Implementacion
 bici = Bicicleta(10, "Terrestre")
 bici.mostrar()
 bici.pedalear()
