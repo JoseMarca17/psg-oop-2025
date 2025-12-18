@@ -1,38 +1,42 @@
 class Nadador:
     def nadar(self):
-        print("Nadando en el agua")
-
+        print("Desplazandose por el agua...")
 
 class Volador:
     def volar(self):
-        print("Volando por el aire")
-
+        print("Desplazandose por el aire...")
 
 class Pez(Nadador):
-    def mostrar(self):
-        print("Personaje: Pez")
-        self.nadar()
+    def __init__(self, nombre_tipo):
+        self.nombre_tipo = nombre_tipo
 
+    def mostrar(self):
+        print(f"Tipo: {self.nombre_tipo}")
+        self.nadar()
 
 class Pajaro(Volador):
+    def __init__(self, nombre_tipo):
+        self.nombre_tipo = nombre_tipo
+
     def mostrar(self):
-        print("Personaje: Pajaro")
+        print(f"Tipo: {self.nombre_tipo}")
         self.volar()
 
-
 class Pato(Nadador, Volador):
+    def __init__(self, nombre_tipo):
+        self.nombre_tipo = nombre_tipo
+
     def mostrar(self):
-        print("Personaje: Pato")
-        print("Habilidades combinadas:")
+        print(f"Tipo: {self.nombre_tipo} (Personaje Versatil)")
         self.nadar()
         self.volar()
 
+# Implementacion
+nemo = Pez("Pez Payaso")
+nemo.mostrar()
 
-pez = Pez()
-pez.mostrar()
+zazu = Pajaro("Zanate")
+zazu.mostrar()
 
-pajaro = Pajaro()
-pajaro.mostrar()
-
-pato = Pato()
-pato.mostrar()
+donald = Pato("Pato")
+donald.mostrar()

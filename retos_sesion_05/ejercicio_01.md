@@ -1,59 +1,56 @@
-# EJERCICIO 1
-Una empresa de transporte desea desarrollar una simulación que represente el comportamiento de sus distintos vehículos.
-Todo vehículo posee las siguientes características:
+# Analisis
 
-- velocidad: Es un dato protegido. Puede consultarse, pero solo modificarse mediante acciones específicas.
-- medio: Representa el entorno en el que se desplaza el vehículo (por ejemplo, terrestre, acuático, aéreo). Puede consultarse y modificarse libremente.
+## Requisitos:
+- Se requiere modelar una estructura jerarquica para vehiculos de transporte.
+- La velocidad es un estado critico que debe protegerse de modificaciones externas directas, permitiendo solo cambios mediante metodos internos de clase.
+- El medio de desplazamiento define el entorno de operacion del vehiculo y debe ser de libre acceso.
+- Los vehiculos especificos como la bicicleta y el avion deben heredar la estructura base pero implementar su propia logica de aceleracion.
+- La bicicleta incrementa su velocidad por esfuerzo mecanico (pedalear).
+- El avion incrementa su velocidad por propulsion (volar).
 
-Existen dos tipos de vehículos con características específicas:
-- Bicicleta: Incrementar su velocidad mediante la acción de pedalear.
-- Avión: Incrementar su velocidad mediante la acción de volar.
+## Objetos:
+- Vehiculo (clase padre)
+- Bicicleta (clase hija)
+- Avion (clase hija)
 
-## ANALSISIS
+## Caracteristicas:
+- Vehiculo: 
+  - velocidad 
+  - medio
+- Bicicleta: 
+  - (heredadas)
+- Avion: 
+  - (heredadas)
 
-### REQUISITOS:
-- Los vehiculos tiene una velocidad protegida, se modifica solo mediante acciones especificas
-- Los vehiculos tienen un medio de desplazamiento libre de consultarse y modificarse
-- Bicicleta es un tipo de vehiculo
-- La bicicleta aumenta su velocidad al pedalear
-- Avion es un tipo de vehiculo
-- El avion aumenta su velocidad al volar
-- Bicicleta y avion heredan de vehiculo
+## Acciones:
+- Vehiculo: 
+  - mostrar
+- Bicicleta: 
+  - pedalear
+- Avion: 
+  - volar
 
-### Objetos 
-- Vehiculo (Clase Padre)
-- Bicicleta (Hereda de Vehiculo)
-- Avion (Hereda de Vehiculo)
+## Diseño
 
-### Caracteristicas
-- Vehiculo
-  - velocidad: float
-  - medio: String
-- Bicicleta
-  - (sin caracteristicas)
-- Avion
-  - (sin caracteristicas)
+Clases:
+- Vehiculo:
+    - Atributos:
+        - #velocidad: int
+        - +medio: str
+    - Metodos:
+        - +mostrar()
+- Bicicleta:
+    - Metodos:
+        - +pedalear()
+- Avion:
+    - Metodos:
+        - +volar()
 
-### Acciones
-- Vehiculo
-  - get_velocidad()
-  - set_medio()
-  - get_medio()
-  - mostrar()
-- Bicicleta
-  - pedalear()
-- Avion
-  - volar()
-
-### Diagrama
 ```mermaid
 classDiagram
     class Vehiculo {
-        -velocidad: float
-        +medio: String
-        +get_velocidad()
-        +get_medio()
-        +set_medio()
+        #int velocidad
+        +String medio
         +mostrar()
     }
     class Bicicleta {
@@ -62,7 +59,5 @@ classDiagram
     class Avion {
         +volar()
     }
-
     Vehiculo <|-- Bicicleta
     Vehiculo <|-- Avion
-```

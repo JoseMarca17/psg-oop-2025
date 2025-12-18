@@ -1,56 +1,52 @@
+# Analisis
 
-# EJERCICIO 2
+## Requisitos:
+- El sistema requiere un modelo de habilidades modulares para personajes de un videojuego.
+- Las habilidades de nadar y volar funcionan como clases base que definen comportamientos especificos.
+- Se debe aplicar herencia simple para personajes con una sola habilidad (Pez, Pajaro).
+- Se requiere herencia multiple para personajes con capacidades versatiles (Pato).
+- Cada personaje debe ser capaz de presentarse y declarar sus capacidades actuales de forma consolidada.
 
-Debes desarrollar un videojuego tipo aventura, donde los personajes tiene distintas habilidades
-Cada personaje pertenece a uno o más tipos que definen sus comportamientos:
-- Nadador: Puede ejecutar la acción nadar(), que representa la acción de desplazarse en el agua.
-- Volador: Puede ejecutar la acción volar(), que representa la acción de desplazarse por el aire.
-En el juego existen tres personajes principales, cada uno con habilidades específicas:
-- Pez: tiene la habilidad de nadar.
-- Pájaro: tiene la habilidad de volar.
-- Pato: tiene ambas habilidades, puede nadar y volar.
-- Cada personaje debe contar con un método mostrar() que indique el tipo de personaje y su habilidad principal o combinada.
+## Objetos:
+- Nadador (clase padre)
+- Volador (clase padre)
+- Pez (clase hija)
+- Pajaro (clase hija)
+- Pato (clase hija )
 
-## Análisis
-### Requisitos
-- Los personajes tienen distintas habilidades.
-- Nadador tiene la accion de desplazarse por el agua, nadar. 
-- Volador tiene la accion de volar.  
-- Pez es un personaje de tipo Nadador
-- Pajaro es un personaje de tipo Volador
-- Pato es un personaje que tiene la habilidad de volar
-- Cada personaje debe tener un método mostrar() que indique su tipo y habilidades
+## Caracteristicas:
+- Pez: 
+  - nombre_tipo
+- Pajaro: 
+  - nombre_tipo
+- Pato: 
+  - nombre_tipo
 
-### Objetos
-- Nadador (Clase padre)
-- Volador (Clase padre)
-- Pez (Clase Hija)
-- Pajaro (Clase Hija)
-- Pato (Clase Hija)
-
-### Características 
-- Nadador
-    - (sin caracteristicas)
-- Volador
-    - (sin caracteristicas)
-- Pez
-  - (sin caracteristicas)
-- Pajaro
-  - (sin caracteristicas)
-- Pato
-  - (sin caracteristicas)
-
-### Acciones 
-- Nadador:
-    - nadar()
+## Acciones:
+- Nadador: 
+  - nadar
 - Volador:
-    - volar()
+  -  volar
+- Pez: 
+  - mostrar
+- Pajaro: 
+  - mostrar
+- Pato: 
+  - mostrar
+
+## Diseño
+
+Clases:
+- Nadador:
+    - Metodos: +nadar()
+- Volador:
+    - Metodos: +volar()
 - Pez:
-    - mostrar() 
-- Pájaro:
-    - mostrar() 
+    - Metodos: +mostrar()
+- Pajaro:
+    - Metodos: +mostrar()
 - Pato:
-    - mostrar(): 
+    - Metodos: +mostrar()
 
 ```mermaid
 classDiagram
@@ -69,9 +65,7 @@ classDiagram
     class Pato {
         +mostrar()
     }
-
-    Nadador <|-- Pez 
-    Volador <|-- Pajaro 
-    Nadador <|-- Pato 
-    Volador <|-- Pato 
-```
+    Nadador <|-- Pez
+    Volador <|-- Pajaro
+    Nadador <|-- Pato
+    Volador <|-- Pato
