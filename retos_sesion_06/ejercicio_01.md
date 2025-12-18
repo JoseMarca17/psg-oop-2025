@@ -1,68 +1,74 @@
-# EJERCICIO 1
-En su trayecto diario al trabajo, las personas pueden abordar distintos minibuses. Cada minibus está identificado por un número de ruta y sigue un recorrido compuesto por varias paradas (ubicaciones). Por otro lado, cada pasajero tiene un nombre y una ubicación de destino a la que desea llegar.
-Los pasajeros pueden subir o bajar del minibus en cualquier parada, pero bajo las siguientes condiciones:
-- Un pasajero solo puede subir si el recorrido del minibus incluye su destino entre las paradas programadas.
-- Un pasajero solo puede bajar si la parada actual del minibus coincide con su destino.
-- Las paradas son circulares: al llegar al final del recorrido, el minibus invierte su lista de paradas y regresa en sentido contrario.
-Diseñar las clases necesarias para representar Minibus y Pasajero.
-Toma en cuenta las siguientes características:
-Un minibus tiene una lista de paradas programadas (ejemplo: ["Arce", "Prado", "Perez"]).
-Un minibus puede transportar múltiples pasajeros.
-Simular el movimiento del minibus entre paradas y las acciones de subida y bajada de pasajeros.
+# Analisis
 
-## ANALISIS
-### Requisitos
-- Un pasajero tiene nombre y destino
-- Un pasajero sube si el destino enta en el recorrido del minibus
-- Un pasajero baja si la parada actual coincide con su destino
-- Un Minibus tiene un numero de ruta y rutas programadas
-- Un minibus Puede transportar múltiples pasajeros.
-- Simular el movimiento del minibus entre paradas y las acciones de subida y bajada de pasajeros.
-### Objetos
+## Requisitos:
+- Se requiere modelar la interaccion entre una unidad de transporte (Minibus) y sus usuarios (Pasajeros).
+- La relacion entre Minibus y Pasajero es de agregacion, ya que los pasajeros existen de forma independiente y pueden subir o bajar del vehiculo sin afectar la existencia de este.
+- El Minibus debe gestionar un recorrido circular, invirtiendo su direccion al llegar a los extremos de la lista de paradas.
+- El abordaje esta condicionado a que el destino del pasajero se encuentre dentro de la ruta programada.
+- El descenso es automatico cuando la ubicacion actual del minibus coincide con el destino del usuario.
+
+## Objetos:
 - Minibus
 - Pasajero
 
-### Características
-- Minibus
-  - numero_ruta: int
-  - paradas: list[]
-  - direccion: int
-  - direccion_actual: int 
-  - pasajeros: list[Pasajero]
+## Caracteristicas:
+- Minibus: 
+  - numero_ruta 
+  - paradas 
+  - indice_actual 
+  - direccion 
+  - pasajeros
+- Pasajero: 
+  - nombre 
+  - destino
 
-- Pasajero
-  - nombre: String
-  - destino: String
+Acciones:
+- Minibus: 
+  - avanzar 
+  - subir_pasajero 
+  - bajar_pasajeros 
+  - mostrar_informacion
+- Pasajero: 
+  - mostrar_informacion
 
-### Acciones
-- Minibus
-  - avanzar()
-  - subir_pasajero(pasajero: Pasajero)
-  - bajar_pasajeros()
-  - minibus_informacion()
-- Pasajero
-  - pasajero_informacion()
+## Diseño
 
-### Diagrama de clases
+Clases:
+- Minibus:
+    - Atributos:
+        - numero_ruta (int)
+        - paradas (list)
+        - indice_actual (int)
+        - direccion (int)
+        - pasajeros (list)
+    - Metodos:
+        - avanzar()
+        - subir_pasajero(pasajero)
+        - bajar_pasajeros()
+        - mostrar_informacion()
+- Pasajero:
+    - Atributos:
+        - nombre (str)
+        - destino (str)
+    - Metodos:
+        - mostrar_informacion()
+
 ```mermaid
 classDiagram
     class Minibus {
-        +numero_ruta: int
-        +paradas: list[]
-        +direccion: int
-        +indice_actual: int
-        +pasajeros: list[Pasajero]
+        +int numero_ruta
+        +list paradas
+        +int indice_actual
+        +int direccion
+        +list pasajeros
         +avanzar()
-        +subir_pasajero(pasajero: Pasajero)
+        +subir_pasajero(pasajero)
         +bajar_pasajeros()
-        +minibus_informacion()
+        +mostrar_informacion()
     }
-
     class Pasajero {
-        +nombre: str
-        +destino: str
-        +pasajero_informacion()
+        +str nombre
+        +str destino
+        +mostrar_informacion()
     }
-
     Minibus o-- Pasajero
-```
