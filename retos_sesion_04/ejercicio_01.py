@@ -1,9 +1,9 @@
 class Cuenta:
-    def __init__(self, numero_cuenta, nombre_titular,saldo):
+    def __init__(self, numero_cuenta, nombre_titular, saldo_inicial):
         self.__numero_cuenta = numero_cuenta
-        self.nombre_titular = nombre_titular
-        self.__saldo = saldo
-        
+        self.__nombre_titular = nombre_titular
+        self.__saldo = saldo_inicial
+
     @property
     def numero_cuenta(self):
         return self.__numero_cuenta
@@ -20,37 +20,28 @@ class Cuenta:
     def nombre_titular(self, nuevo_nombre):
         if nuevo_nombre.strip():
             self.__nombre_titular = nuevo_nombre
-            print(f"\nNombre del titular actualizado a: {nuevo_nombre}")
+            print(f"Titular actualizado: {self.__nombre_titular}")
         else:
-            print("Error: Debe introducir un nombre")
+            print("Error: El nombre no puede estar vacio")
 
-    def deposito(self, monto) :
+    def deposito(self, monto):
         if monto > 0:
             self.__saldo += monto
-            print("\nDeposito exitoso :)")
-            print("Monto depositado: ", monto)
-            print("Saldo actual: ", self.__saldo)
+            print(f"Deposito exitoso. Saldo actual: {self.__saldo}")
         else:
-            print("\nError: el monto del depósito debe ser positivo.")
+            print("Error: El monto debe ser positivo")
 
     def retiro(self, monto):
-        if monto <= 0:
-            print("\nError: el monto del retiro debe ser positivo.")
-        elif monto > self.__saldo:
-            print("\nSaldo insuficiente :( No se pudo realizar el retiro.")
-        else:
+        if 0 < monto <= self.__saldo:
             self.__saldo -= monto
-            print("\nRetiro exitoso :)")
-            print("Monto retirado: ", monto)
-            print("Saldo actual: ", self.__saldo)
+            print(f"Retiro exitoso. Saldo actual: {self.__saldo}")
+        else:
+            print("Error: Fondos insuficientes o monto invalido")
 
-cuenta_1 = Cuenta(100020013290,"Jose Marca", 450.70)
-print(f"Número de cuenta: {cuenta_1.numero_cuenta}")
-print(f"Titular: {cuenta_1.nombre_titular}")
-print(f"Saldo inicial: {cuenta_1.saldo}")
+cuenta_persona = Cuenta("100020013290", "Jose Marca", 450.70)
+print(f"Cuenta: {cuenta_persona.numero_cuenta}")
+print(f"Saldo: {cuenta_persona.saldo}")
 
-cuenta_1.deposito(315.80)
-cuenta_1.retiro(567.30)
-cuenta_1.retiro(600)
-
-cuenta_1.nombre_titular = "Rafael Gonzalo"
+cuenta_persona.deposito(315.80)
+cuenta_persona.retiro(100.00)
+cuenta_persona.nombre_titular = "Rafael Gonzalo"

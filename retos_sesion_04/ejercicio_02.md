@@ -1,46 +1,49 @@
-# Ejercicio 2 
-Un médico necesita simular el comportamiento de una célula. Cada célula debe cumplir con las siguientes características:
-- ADN: Se puede consultar pero no puede cambiar.
-- tipo de célula: Puede consultarse y modificarse libremente.
-- energía: Es un dato privado. Puede aumentar o disminuir, únicamente mediante las acciones de comer o dividirse.
+# Analisis
 
-## Analisis
-### Requisitos:
+## Requisitos:
+- Se requiere modelar una celula para simulaciones medicas precisas.
+- El codigo genetico ADN es la base inalterable de la celula, por lo que su acceso es solo de lectura.
+- El tipo de celula define su funcion y puede evolucionar o cambiar libremente.
+- La energia es un recurso interno que no puede ser asignado directamente, sino que resulta de procesos biologicos como comer o dividirse.
+- El proceso de division debe validar que exista suficiente energia para evitar la muerte celular.
 
-- El ADN solo puede consultarse, no modificarse directamente.
-- El tipo de célula puede consultarse y modificarse libremente.
-- La energía es privada y solo puede cambiar mediante las acciones de comer o dividirse
-
-### Objetos:
+## Objetos:
 - Celula
-### Características:
-- Celula:
-    - ADN: String
-    - tipo_celula: String
-    - energia: int
 
-### Acciones:
-- Celula:
-    - comer(): 
-    - dividirse(): 
-    - get_ADN(): 
-    - get_tipo_celula(): 
-    - set_tipo_celula(nuevo_tipo): 
-    - get_energia(): 
+## Caracteristicas:
+- adn
+- tipo_celula
+- energia
 
-### Diagrama de clases:
+## Acciones:
+- comer
+- dividirse
+- consultar_adn
+- consultar_energia
+- gestionar_tipo
+
+## Diseño
+
+Clases:
+- Celula:
+    - Atributos:
+        - adn 
+        - tipo_celula 
+        - energia 
+    - Metodos:
+        - comer()
+        - dividirse()
 
 ```mermaid
 classDiagram
     class Celula {
-        - String ADN
-        + String tipo_celula
+        - String adn
+        - String tipo_celula
         - int energia
         + comer()
         + dividirse()
-        + get_ADN()
-        + get_tipo_celula()
-        + set_tipo_celula(nuevo_tipo)
-        + get_energia()
+        + get adn()
+        + get tipo_celula()
+        + set tipo_celula()
+        + get energia()
     }
-```

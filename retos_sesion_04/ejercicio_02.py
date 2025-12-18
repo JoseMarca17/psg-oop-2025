@@ -3,7 +3,6 @@ class Celula:
         self.__adn = adn
         self.__tipo_celula = tipo_celula
         self.__energia = energia
-        
 
     @property
     def adn(self):
@@ -17,31 +16,28 @@ class Celula:
     def tipo_celula(self, nuevo_tipo):
         if nuevo_tipo.strip():
             self.__tipo_celula = nuevo_tipo
-            print(f"\nTipo de celula actualizado a: {self.__tipo_celula}")
+            print(f"Tipo de celula cambiado a: {self.__tipo_celula}")
 
     @property
     def energia(self):
         return self.__energia
 
-    def comer(self, ):
-        self.__energia += 20
-        print("\nLa celula ha comido y ganado 20 de energía") 
-        print(f"Energía actual: {self.__energia}")
+    def comer(self):
+        incremento = 20
+        self.__energia += incremento
+        print(f"La celula ha comido. Energia actual: {self.__energia}")
 
     def dividirse(self):
-        if self.__energia >= 2:
+        if self.__energia >= 10:
             self.__energia /= 2
-            print("\nLa celula se ha dividido")
-            print(f"Energia de la celula después de dividirse: {self.__energia}")
+            print(f"Division exitosa. Energia restante: {self.__energia}")
         else:
-            print("Energía insuficiente para dividirse. La celula necesita más energía.")
+            print("Energia insuficiente para division")
 
-celula_1 = Celula("ATCG", "Eucariota", 5)
-print(f"ADN: {celula_1.adn}")
-print(f"Tipo de celula: {celula_1.tipo_celula}")
-print(f"Energía: {celula_1.energia}")
+celula_estudio = Celula("ATCG", "Eucariota", 50)
+print(f"ADN: {celula_estudio.adn}")
+print(f"Energia inicial: {celula_estudio.energia}")
 
-celula_1.tipo_celula = "Procariota"
-
-celula_1.comer()
-celula_1.dividirse()
+celula_estudio.comer()
+celula_estudio.dividirse()
+celula_estudio.tipo_celula = "Procariota"
